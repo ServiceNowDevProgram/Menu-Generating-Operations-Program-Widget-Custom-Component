@@ -1,0 +1,72 @@
+.menu-item {
+    align-items: center;
+    display: flex;
+
+    .leftMenu {
+        display: flex;
+        gap: 10px;
+        margin-right: 10px;
+        align-items: center;
+    }
+
+    .midMenu {
+        display: flex;
+        width: 33%;
+        align-items: center;
+        gap: 10px;
+
+        now-input {
+            width: 100%;
+        }
+    }
+
+    .rightMenu {
+        display: flex;
+        margin-left: auto;
+        flex-direction: row-reverse;
+        margin-right: 30px;
+        align-items: center;
+
+        now-collapse {
+            div {
+                gap: 10px;
+                display: flex;
+                align-items: center;
+
+                now-button-iconic {
+                    color: red !important;
+
+                    button {
+                        color: red !important;
+
+                        now-icon {
+                            color: red !important;
+                            svg {
+                                color: red !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+li {
+    list-style-type: none;
+}
+
+span {
+    text-transform: capitalize;
+    color: white;
+    padding: 8px;
+    border-radius: 32px;
+
+    &[data-choice="menu"] {
+        background-color: #379099;
+    }
+
+    &[data-choice="action"] {
+        background-color: #28a745;
+    }
+}

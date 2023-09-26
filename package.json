@@ -1,0 +1,35 @@
+{
+	"name": "menu-builder-uic",
+	"version": "0.0.1",
+	"private": false,
+	"description": "",
+	"keywords": [
+		"ServiceNow",
+		"Now Experience UI Component",
+		"menu-builder-uic"
+	],
+	"readme": "./README.md",
+	"engines": {
+		"node": ">=8.6.0",
+		"npm": ">=5.3.0"
+	},
+	"module": "src/index.js",
+	"dependencies": {
+		"@servicenow/cli-archetype": "22.0.0",
+		"@servicenow/cli-component-archetype": "22.0.0",
+		"@servicenow/library-translate": "quebec",
+		"@servicenow/now-button": "^19.8.2-ecd",
+		"@servicenow/now-collapse": "^19.8.2-ecd",
+		"@servicenow/now-dropdown": "^19.8.2-ecd",
+		"@servicenow/now-input": "^19.8.2-ecd",
+		"@servicenow/now-split-button": "^19.8.2-ecd",
+		"@servicenow/sass-kit": "quebec",
+		"@servicenow/sass-theme": "quebec",
+		"@servicenow/ui-core": "quebec",
+		"@servicenow/ui-renderer-snabbdom": "quebec"
+	},
+	"devDependencies": {
+		"@servicenow/cli-archetype-dev": "22.0.0",
+		"@servicenow/cli-component-archetype-dev": "22.0.0"
+	}
+}

@@ -1,0 +1,56 @@
+{
+    "components": {
+        "x-759224-menu-builder-uic": {
+            "actions": [
+                {
+                    "name": "TREE_UPDATED",
+                    "payload": [
+                        {
+                            "name": "tree"
+                        }
+                    ]
+                },
+                {
+                    "name": "MENU_UPDATED",
+                    "payload": [
+                        {
+                            "name": "menu"
+                        }
+                    ]
+                },
+                {
+                    "name": "JSON_IMPORTED",
+                    "payload": [
+                        {
+                            "name": "json"
+                        }
+                    ]
+                }
+            ],
+            "innerComponents": [
+                "menu-editor",
+                "menu-item",
+                "menu-tree",
+                "menu-ui"
+            ],
+            "uiBuilder": {
+                "associatedTypes": ["global.core", "global.landing-page"],
+                "label": "Menu Builder",
+                "icon": "add-item-below-fill",
+                "description": "Import, edit, and build menus for your UI Buider Portal Experiences using a user-friendly interface.",
+                "category": "primitives"
+            },
+            "properties": [
+                {
+                    "name": "menuTree",
+                    "label": "Menu Tree"
+                },
+                {
+                    "name": "importJSON",
+                    "label": "Import JSON"
+                }
+            ]
+        }
+    },
+    "scopeName": "x_759224_menu_bu_1"
+}
