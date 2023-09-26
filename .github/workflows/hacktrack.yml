@@ -14,6 +14,7 @@ on:
     branches: main
 jobs:
   deployment:
+    if: github.repository == 'ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Custom-Component'
     runs-on: ubuntu-latest
     steps:
 #     - name: Log payload
