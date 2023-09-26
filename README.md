@@ -1,5 +1,1 @@
-menu-builder-uic
-===============================================
-
-
-Component Authors, provide some documentation for your users here!
+<a name="banner" style="margin: auto;" href="#banner">![banner](/images/banner.png)</a>
