@@ -69,7 +69,7 @@ Now using node v14.21.3
 If you already had the CLI installed, you can update the `ui-component` extension from the command line with the following command: `snc extension update --name ui-component`.
 
 ## Instance setup
-Follow these instructions to install the experience page and 
+Follow these instructions to install the experience page and the menu builder component in your instance.
 
 1. Open App Engine Studio and import the sister repository directly to your instance: [Menu-Generating-Operations-Program-Widget-Experience-Page](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Experience-Page)
 2. Install the [Update Set provided in the Releases section of this repository](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Custom-Component/releases/tag/original).
