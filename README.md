@@ -21,7 +21,9 @@ And that's what you see here! We've created a Custom Component and Experience pa
 But thanks to Hacktoberfest, it gets even better - now you can help us finish it by contributing! Be sure to check out our [CONTRIBUTING.md]() file for more info on how you can help!
 
 ![my dream](/images/design.png)
+
 This is what i pictured the final component would look like. We're almost there! 
+
 # What do I need to know?
 - We've created issues to list out contribution ideas you might want to pick up! Or if you think of new stuff to contribute, make a new issue and let us know what you're going to work on.
 - Design philosophy: Components should be presentational if possible, but if the exchange with the server data is complex enough, and you're going to use it in multiple places, you're really better off with a connected component. In this case, we tried to stick to making the component more presentational in nature so keep that in mind when adding new features if possible.
@@ -31,6 +33,7 @@ This is what i pictured the final component would look like. We're almost there!
 In case it's a bit confusing to start with, here's a brief description of what each file in the repository is for along with an image to explain the anatomy of the component.
 
 ![anatomy of the component](/images/componentanatomy.png)
+
 ### src/x-759224-menu-builder-uic/
 - index.js  
 	- This is the starting point of the custom component, UI Builder manages its properties and events.
@@ -60,12 +63,13 @@ In case it's a bit confusing to start with, here's a brief description of what e
 # Some information on Portal Experience menus
 I've tried to reverse engineer these as best as I could to make this component, but I know I haven't fully figured it out yet. Here's what I already know to help you get started.
 
-Menus have a complex parent/child relationship that determines their behavior and how menus are presented. [There's an issue created to investigate and implement this feature]() so if you want to delve deeper, please go right ahead. 
+Menus have a complex parent/child relationship that determines their behavior and how menus are presented. [There's an issue created to investigate and implement this feature](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Custom-Component/issues/1) so if you want to delve deeper, please go right ahead. 
 
 For example, the more menus you have nested, their appearance and layout changes in the menu itself. I don't quite remember the number, unfortunately.
 
 Actions have similar behavior, which I haven't cataloged. Sometimes they show up as buttons, while other times they show up as links. 
 
 ![anatomy of a menu](/images/menuanatomy.png)
+
 Visual of what i've figured out so far.
 
