@@ -71,10 +71,9 @@ If you already had the CLI installed, you can update the `ui-component` extensio
 ## Instance setup
 Follow these instructions to install the experience page and 
 
-1. Open App Engine Studio and import apps in this order 
-	1. Import the sister repository directly to your instance: [Menu-Generating-Operations-Program-Widget-Experience-Page](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Experience-Page)
-	2. Install the [Update Set provided in the Releases section of this repository](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Custom-Component/releases/tag/original).
-2. Search for `Hacktober23` in the Filter Navigation 
+1. Open App Engine Studio and import the sister repository directly to your instance: [Menu-Generating-Operations-Program-Widget-Experience-Page](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Experience-Page)
+2. Install the [Update Set provided in the Releases section of this repository](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Custom-Component/releases/tag/original).
+3. Search for `Hacktober23` in the Filter Navigation 
 	1. **Menu Builder** – takes you to the page to play with the component 
 	2. **UI Builder** – takes you to the UI Builder page for the Menu Builder page 
 
