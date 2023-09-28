@@ -23,7 +23,7 @@ Things you'll need:
 Links you're going to need:
 - Link to [Store Page](https://store.servicenow.com/sn_appstore_store.do#!/store/application/9085854adbb52810122156a8dc961910/1.1.0?referer=%2Fstore%2Fsearch%3Flistingtype%3Dallintegrations%25253Bancillary_app%25253Bcertified_apps%25253Bcontent%25253Bindustry_solution%25253Boem%25253Butility%25253Btemplate%25253Bgenerative_ai%25253Bsnow_solution%26q%3Dcli&sl=sh). 
 	- In order to download the CLI from the Store, you need to log in to an account using the same email address you currently use to login to Now Support. 
-- Link to [Product Docs page with installation instructions.]([https://docs.servicenow.com/bundle/vancouver-application-development/page/build/servicenow-cli/task/download-cli.html](https://docs.servicenow.com/bundle/vancouver-application-development/page/build/servicenow-cli/task/download-cli.html))
+- Link to [Product Docs page with installation instructions.](https://docs.servicenow.com/bundle/vancouver-application-development/page/build/servicenow-cli/task/download-cli.html)
 - Link to [Product Docs section on NOW-CLI](https://docs.servicenow.com/en-US/bundle/vancouver-application-development/page/build/servicenow-cli/concept/servicenow-cli.html).
 - Link to [Alternative Download from GitHub](https://github.com/ServiceNow/servicenow-cli).
 - Link to download [VS Code](https://code.visualstudio.com)
