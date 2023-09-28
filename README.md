@@ -7,7 +7,10 @@ Hola! @MGOPW here. This Custom Component repository has a [sister repository](ht
 Other resources you should check out:
 - [Next Experience Center of Excellence](https://www.servicenow.com/community/next-experience-articles/next-experience-center-of-excellence/ta-p/2332092) - This is the main place where we post Next Experience, Workspace, and UI Builder enablement materials.
 - [You & I Builder Live](https://www.youtube.com/playlist?list=PL3rNcyAiDYK2Bgzj4mRdtfxMpGkI5KXBJ) - A more technical and in-depth view in to UI Builder packaged in a hilarious and casual format. Come hang out in chat and learn some UI Builder while you're at it!
-- [Next Experience Academy](https://www.servicenow.com/community/next-experience-blog/next-experience-academy-upcoming-and-recorded-sessions/ba-p/2272673) - Monthly webinar series we host for all audiences, all academies are uploaded to [this youtube playlist](https://www.youtube.com/watch?v=wuli92FRGC0&list=PLkGSnjw5y2U6hmEPcDcJ53FHwKJIvoLvr) after the fact. 
+- [Next Experience Academy](https://www.servicenow.com/community/next-experience-blog/next-experience-academy-upcoming-and-recorded-sessions/ba-p/2272673) - Monthly webinar series we host for all audiences, all academies are uploaded to [this youtube playlist](https://www.youtube.com/watch?v=wuli92FRGC0&list=PLkGSnjw5y2U6hmEPcDcJ53FHwKJIvoLvr) after the fact.
+
+And lastly, this repository is part of a larger coordinated effort by the ServiceNow Developer Advocate to provide lots of fun ServiceNow projects for Hacktoberfest. Be sure to check out the [main repository README](https://github.com/ServiceNowDevProgram/Hacktoberfest) to see what else you can participate in!
+ 
 # Content
 - [What is this even for?](#what-is-this-even-for)
 - [What do i need to know?](#what-do-i-need-to-know)
