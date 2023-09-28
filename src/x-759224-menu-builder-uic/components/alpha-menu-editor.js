@@ -3,6 +3,8 @@ import snabbdom, { Fragment } from "@servicenow/ui-renderer-snabbdom";
 import styles from "../styles/alpha-menu-editor.scss";
 import "@servicenow/now-button";
 
+// File description: This is the editor bar to create new top-level menu items and actions, or delete everything.
+
 const view = () => {
   return (
     <Fragment>
