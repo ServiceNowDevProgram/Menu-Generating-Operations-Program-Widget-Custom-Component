@@ -3,6 +3,8 @@ import snabbdom from "@servicenow/ui-renderer-snabbdom";
 import styles from "./styles.scss";
 import "./components/menu-ui";
 
+// File description: This is the starting point of the custom component, UI Builder manages its properties and events.
+
 const view = (
   { properties: { menuTree, importJSON }, initialImport },
   { updateState, dispatch }
