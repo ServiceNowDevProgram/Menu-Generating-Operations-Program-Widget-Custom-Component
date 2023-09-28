@@ -1,5 +1,5 @@
 # Introduction
-This is going to get somewhat complex, but I hope we have provided enough guidance here for you to get going. If you ever get stuck, you can find us over on the [SNDEVS](https://sndevs.com) slack ([invite.sndevs.com](https://invite.sndevs.com)) in either the #hactoberfest channel or the #next-experience-uib-workspace channel. 
+This is going to get somewhat complex, but I hope we have provided enough guidance here for you to get going. If you ever get stuck, you can find us over on the [SNDEVS](https://sndevs.com) community ([invite.sndevs.com](https://invite.sndevs.com)) in either the #hactoberfest channel or the #next-experience-uib-workspace channel. 
 
 Things you'll need:
 - VS Code or a similar IDE (We'll move forward assuming you're using VS Code)
