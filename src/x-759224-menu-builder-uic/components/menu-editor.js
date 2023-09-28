@@ -3,6 +3,8 @@ import snabbdom, { Fragment } from "@servicenow/ui-renderer-snabbdom";
 import styles from "../styles/menu-editor.scss";
 import "@servicenow/now-split-button";
 
+// File description: This is similar to the alpha-menu-editor, but this creates sub-level menu items or actions for an existing menu item.
+
 const view = () => {
 	return (
 		<Fragment>
