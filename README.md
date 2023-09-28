@@ -37,30 +37,30 @@ In case it's a bit confusing to start with, here's a brief description of what e
 
 ![anatomy of the component](/images/componentanatomy.png)
 
-### src/x-759224-menu-builder-uic/
-- index.js  
+### `src/x-759224-menu-builder-uic/`
+- `index.js`
 	- This is the starting point of the custom component, UI Builder manages its properties and events.
-### src/x-759224-menu-builder-uic/components/
-- alpha-menu-editor.js  
+### `src/x-759224-menu-builder-uic/components/`
+- `alpha-menu-editor.js`
 	- This is the editor bar to create new top-level menu items and actions, or delete everything.
-- menu-editor.js  
+- `menu-editor.js`
 	- This is similar to the alpha-menu-editor, but this creates sub-level menu items or actions for an existing menu item.
-- menu-item.js  
+- `menu-item.js`
 	- where to configure all the details about a menu item, such as its name, link, or delete
-- menu-tree.js  
+- `menu-tree.js`
 	- displays a top-level menu item (and child items), expand/collapse functionality for the container
-- menu-ui.js  
+- `menu-ui.js`
 	- similar to menu-tree, but this displays all top-level menu items and is the starting point for the overall layout of the component
-### src/x-759224-menu-builder-uic/styles/
-- alpha-menu-editor.scss  
+### `src/x-759224-menu-builder-uic/styles/`
+- alpha-menu-editor.scss`
 	- styles for alpha-menu-editor
-- menu-editor.scss  
+- `menu-editor.scss`
 	- styles for menu-editor
-- menu-item.scss  
+- `menu-item.scss`
 	- styles for menu-item
-- menu-tree.scss  
+- `menu-tree.scss`
 	- styles for menu-tree
-- styles.scss  
+- `styles.scss`
 	- global styles for all components
 
 # Some information on Portal Experience menus
