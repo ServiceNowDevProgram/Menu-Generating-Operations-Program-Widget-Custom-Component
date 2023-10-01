@@ -4,6 +4,8 @@
 # Welcome!
 Hola! @MGOPW here. This Custom Component repository has a [sister repository](https://github.com/ServiceNowDevProgram/Menu-Generating-Operations-Program-Widget-Experience-Page) containing the accompanying Experience Page for this component, be sure to check out both repos to get the full picture of what we are doing here. This project has a slightly complex setup, but it should provide you with a great starting point to learn Custom Components and UI Builder. **You must check out the Instructions section below for more information on how to install these!**
 
+We went over how to contribute to this repository in our [latest episode of You & I Builder Live](https://www.youtube.com/live/aq5Ww9NPXEc?si=LV3CIjCiH7nehzWt) - be sure to check it out! The component ended up working at the end after fixing the scope name and waiting a bit longer. It literally worked the moment we got off stream! 
+
 Other resources you should check out:
 - [Next Experience Center of Excellence](https://www.servicenow.com/community/next-experience-articles/next-experience-center-of-excellence/ta-p/2332092) - This is the main place where we post Next Experience, Workspace, and UI Builder enablement materials.
 - [You & I Builder Live](https://www.youtube.com/playlist?list=PL3rNcyAiDYK2Bgzj4mRdtfxMpGkI5KXBJ) - A more technical and in-depth view in to UI Builder packaged in a hilarious and casual format. Come hang out in chat and learn some UI Builder while you're at it!
