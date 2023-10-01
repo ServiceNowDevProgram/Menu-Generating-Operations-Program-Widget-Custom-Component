@@ -17,12 +17,12 @@ And lastly, this repository is part of a larger coordinated effort by the Servic
 - [File descriptions](#file-descriptions)
 - [Information on Portal Experience menus](#some-information-on-portal-experience-menus)
 - [Instructions](#instructions)
-	- [Installation instructions](##installation-instructions)
+	- [Installation instructions](#installation-instructions)
 		- NOW-CLI
 		    - Upgrading for Vancouver
 		- Instance setup
-	- [Making changes to the component](##making-changes-to-the-component)
-	- [Troubleshooting](##troubleshooting)
+	- [Making changes to the component](#making-changes-to-the-component)
+	- [Troubleshooting](#troubleshooting)
 # What is this even for?
 You can create something called Portal Experiences in UI Builder, which are similar to Workspaces. They aren't currently a replacement for Angular Service Portal as of the writing of this repo, you can read more about this [on the Next Experience Community forum](https://www.servicenow.com/community/next-experience-articles/portal-experience-faqs/ta-p/2331979). These Portal Experiences have menus that are generated from JSON, and it's a pain to manage them right now. So Jesalyn and I decided to do something fun - why not learn how to make a custom component while simultaneously spending hundreds of hours making a solution for something that only mildly inconvenienced us? (And then submit it as a Creator Con lab!)
 
@@ -59,7 +59,7 @@ In case it's a bit confusing to start with, here's a brief description of what e
 - `menu-ui.js`
 	- This is similar to menu-tree, but this displays all top-level menu items and is the starting point for the overall layout of the component
 ### `src/x-759224-menu-builder-uic/styles/`
-- alpha-menu-editor.scss`
+- `alpha-menu-editor.scss`
 	- styles for alpha-menu-editor
 - `menu-editor.scss`
 	- styles for menu-editor
