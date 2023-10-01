@@ -7,6 +7,8 @@ import "@servicenow/now-dropdown";
 import "@servicenow/now-input";
 import "./menu-editor";
 
+// File description: This is where to configure all the details about a menu item, such as its name, link, or delete
+
 const view = (
 	{
 		properties: { id, choice, label, type, page, sysId, href },

@@ -5,6 +5,9 @@ import "@servicenow/now-button";
 import "@servicenow/now-collapse";
 import "./menu-item";
 
+// File description: This displays a top-level menu item (and child items), expand/collapse functionality for the container
+
+
 const view = ({ properties: { tree }, expanded }) => {
 	const { id, children, parent, choice, label, type, page, sys_id, href } =
 		tree;

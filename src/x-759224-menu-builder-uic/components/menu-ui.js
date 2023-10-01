@@ -4,6 +4,8 @@ import styles from "../styles.scss";
 import "./alpha-menu-editor";
 import "./menu-tree";
 
+// File description: This is similar to menu-tree, but this displays all top-level menu items and is the starting point for the overall layout of the component
+
 const view = ({ properties: { menuTree } }) => {
 	return (
 		<Fragment>
