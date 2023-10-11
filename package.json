@@ -1,12 +1,12 @@
 {
-	"name": "menu-builder-h23",
+	"name": "menu-builder-uic",
 	"version": "0.0.1",
 	"private": false,
 	"description": "",
 	"keywords": [
 		"ServiceNow",
 		"Now Experience UI Component",
-		"menu-builder-h23"
+		"menu-builder-uic"
 	],
 	"readme": "./README.md",
 	"engines": {

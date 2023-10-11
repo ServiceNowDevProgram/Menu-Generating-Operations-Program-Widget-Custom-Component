@@ -25,7 +25,7 @@ const view = (
   return <menu-ui menuTree={menuTree}></menu-ui>;
 };
 
-createCustomElement("x-512099-menu-builder-h23", {
+createCustomElement("x-759224-menu-builder-uic", {
   renderer: { type: snabbdom },
   view,
   styles,
