@@ -8,11 +8,18 @@ import "./menu-item";
 // File description: This displays a top-level menu item (and child items), expand/collapse functionality for the container
 
 
-const view = ({ properties: { tree }, expanded }) => {
+const view = ({ properties: { tree }, expanded }, { updateState }) => {
 	const { id, children, parent, choice, label, type, page, sys_id, href } =
 		tree;
 
 	const hasChildren = children && children.length > 0;
+
+	const EXPAND_PARENT = () => {
+		console.log('update state...');
+		updateState({
+			expanded: true,
+		});
+	}
 
 	return (
 		<Fragment>
@@ -35,6 +42,7 @@ const view = ({ properties: { tree }, expanded }) => {
 					sysId={sys_id}
 					href={href}
 					className="menu-item"
+					expandParent={EXPAND_PARENT}
 				></menu-item>
 			</div>
 			{/* Render child menu items in a collapsible container if they exist */}
@@ -62,7 +70,7 @@ createCustomElement("menu-tree", {
 		},
 	},
 	initialState: {
-		expanded: false,
+		expanded: true,
 	},
 	actionHandlers: {
 		"NOW_BUTTON_ICONIC#CLICKED": ({

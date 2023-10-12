@@ -40,13 +40,17 @@ createCustomElement("menu-editor", {
 		parent: {
 			default: null,
 		},
+
+		expandParent: {
+			default: null,
+		}
 	},
 	actionHandlers: {
 		"NOW_DROPDOWN#ITEM_CLICKED": ({
 			action: {
 				payload: { item },
 			},
-			properties: { parent },
+			properties: { parent, expandParent },
 			dispatch,
 		}) => {
 			let choice = "";
@@ -69,6 +73,7 @@ createCustomElement("menu-editor", {
 
 			// Dispatch back to menu-builder component the new menu item information
 			dispatch("MENU_ITEM_EDITED", eventPayload);
+			expandParent();
 		},
 	},
 });

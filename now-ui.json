@@ -1,6 +1,6 @@
 {
     "components": {
-        "x-759224-menu-builder-uic": {
+        "x-1114407-menu-builder-uic": {
             "actions": [
                 {
                     "name": "TREE_UPDATED",
@@ -35,7 +35,7 @@
             ],
             "uiBuilder": {
                 "associatedTypes": ["global.core", "global.landing-page"],
-                "label": "Menu Builder",
+                "label": "Menu Builder H23",
                 "icon": "add-item-below-fill",
                 "description": "Import, edit, and build menus for your UI Buider Portal Experiences using a user-friendly interface.",
                 "category": "primitives"
@@ -52,5 +52,5 @@
             ]
         }
     },
-    "scopeName": "x_759224_menu_bu_1"
+    "scopeName": "x_1114407_menu_bu"
 }
