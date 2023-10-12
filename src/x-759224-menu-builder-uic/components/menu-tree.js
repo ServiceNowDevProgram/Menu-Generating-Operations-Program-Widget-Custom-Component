@@ -15,7 +15,6 @@ const view = ({ properties: { tree }, expanded }, { updateState }) => {
 	const hasChildren = children && children.length > 0;
 
 	const EXPAND_PARENT = () => {
-		console.log('update state...');
 		updateState({
 			expanded: true,
 		});
