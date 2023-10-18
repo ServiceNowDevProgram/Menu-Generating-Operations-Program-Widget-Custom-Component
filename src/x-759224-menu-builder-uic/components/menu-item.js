@@ -268,7 +268,6 @@ createCustomElement("menu-item", {
 					break;
 				default:
 					updateState({ iconInput: payload.item.id }); // action on icon selection
-					break;
 			}
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)
