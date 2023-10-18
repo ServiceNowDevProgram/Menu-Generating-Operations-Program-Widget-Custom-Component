@@ -57,6 +57,7 @@ const view = (
 		},
 	};
 
+	// adding rightIcon property to JSON
 	if(iconValue){
 		actionJSON.value.rightIcon = iconValue
 	}
@@ -103,6 +104,8 @@ const view = (
 				  ></now-button>
 				}
 				<now-dropdown
+					// mapping iconlist for required data in now-dropdown
+					// adding no-icon as a no selection
 					items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e }))]}
 					selectedItems={[iconValue]}
 					name="iconInput"
@@ -264,7 +267,7 @@ createCustomElement("menu-item", {
 					updateState({ typeInput: payload.item.id });
 					break;
 				default:
-					updateState({ iconInput: payload.item.id });
+					updateState({ iconInput: payload.item.id }); // action on icon selection
 					break;
 			}
 		},

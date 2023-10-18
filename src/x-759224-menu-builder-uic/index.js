@@ -43,7 +43,7 @@ createCustomElement("x-1114407-menu-builder-uic", {
 	 * 	type: external or internal link
 	 * 	page: what page to link to if internal type link
 	 * 	sys_id: what sys_id to link to on a page if internal type link
-	 *  rightIcon: right icon
+	 *  rightIcon: right icon property to show icon
 	 * 	href: the href link for an external type link
 	 * }
 	 * If you look at how the default value is setup and compare it to the actual menu in a UI Builder portal page then hopefully the structure starts to make sense
@@ -451,7 +451,6 @@ createCustomElement("x-1114407-menu-builder-uic", {
   actionHandlers: {
 	// This event is for updating the content of an individual menu item. The label, link type, href or page/sys_id values of the item has changed
     INPUT_UPDATED: ({ action: { payload }, dispatch }) => {
-		console.log(payload);
       dispatch("MENU_UPDATED", {
         menu: payload,
       });
