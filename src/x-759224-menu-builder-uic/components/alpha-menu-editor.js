@@ -16,24 +16,24 @@ const view = () => {
           label="Action"
           variant="primary"
           size="md"
-          icon=""
-          tooltip-content=""
+          icon="circle-plus-outline"
+          tooltip-content="Add Action"
           append-to-meta={{ elementId: "action" }}
         ></now-button>
         <now-button
           label="Menu"
           variant="primary"
           size="md"
-          icon=""
-          tooltip-content=""
+          icon="circle-plus-outline"
+          tooltip-content="Add Menu"
           append-to-meta={{ elementId: "menu" }}
         ></now-button>
         <now-button
           label="Delete All"
           variant="primary-negative"
           size="md"
-          icon=""
-          tooltip-content=""
+          icon="trash-outline"
+          tooltip-content="Delete All"
           append-to-meta={{ elementId: "delete_all" }}
         ></now-button>
       </div>
