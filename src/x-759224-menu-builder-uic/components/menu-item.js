@@ -6,18 +6,20 @@ import "@servicenow/now-collapse";
 import "@servicenow/now-dropdown";
 import "@servicenow/now-input";
 import "./menu-editor";
+import iconlist from "../icons";
 
 // File description: This is where to configure all the details about a menu item, such as its name, link, or delete
 
 const view = (
 	{
-		properties: { id, choice, label, type, page, sysId, href, expandParent },
+		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon },
 		labelInput,
 		typeInput,
 		pageInput,
 		sysIdInput,
 		hrefInput,
 		editMode,
+		iconInput
 	},
 	{ dispatch }
 ) => {
@@ -31,6 +33,7 @@ const view = (
 	const pageValue = pageInput || page;
 	const sysIdValue = sysIdInput || sysId;
 	const hrefValue = hrefInput || href;
+	const iconValue = iconInput || rightIcon;
 
 	// This is constructing the JSON output that the chrome_menu UX Page Property expects for this specific menu item
 
@@ -53,6 +56,10 @@ const view = (
 			},
 		},
 	};
+
+	if(iconValue){
+		actionJSON.value.rightIcon = iconValue
+	}
 
 	if (typeValue) {
 		actionJSON.value.type = typeValue;
@@ -88,6 +95,30 @@ const view = (
 					name="labelInput"
 					readonly={!editMode}
 				></now-input>
+				{
+					iconValue && <now-button
+					variant="primary"
+					size="md"
+					icon={iconValue}
+				  ></now-button>
+				}
+				<now-dropdown
+					items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e }))]}
+					selectedItems={[iconValue]}
+					name="iconInput"
+					select="single"
+					placeholder=""
+					icon=""
+					variant="secondary"
+					size="md"
+					bare={true}
+					tooltip-content="Select right icon"
+					panel-fit-props={{}}
+					show-padding={true}
+					config-aria={{}}
+					disabled={!editMode}
+					search="true"
+				></now-dropdown>
 				<now-dropdown
 					items={[
 						{ id: "external", label: "External Link" },
@@ -203,6 +234,9 @@ createCustomElement("menu-item", {
 		},
 		expandParent: {
 			default: undefined
+		},
+		rightIcon: {
+			default: null
 		}
 	},
 	// Keeps track of any changes made during editing
@@ -212,6 +246,7 @@ createCustomElement("menu-item", {
 		pageInput: undefined,
 		sysIdInput: undefined,
 		hrefInput: undefined,
+		iconInput: undefined,
 		editMode: false,
 	},
 	actionHandlers: {
@@ -229,7 +264,11 @@ createCustomElement("menu-item", {
 					updateState({ typeInput: payload.item.id });
 					break;
 				default:
+					updateState({ iconInput: payload.item.id });
+					break;
 			}
+
+			console.log();
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)
 		"NOW_INPUT#INPUT": ({ action: { payload }, updateState }) => {
