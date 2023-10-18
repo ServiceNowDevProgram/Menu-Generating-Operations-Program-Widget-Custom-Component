@@ -267,8 +267,6 @@ createCustomElement("menu-item", {
 					updateState({ iconInput: payload.item.id });
 					break;
 			}
-
-			console.log();
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)
 		"NOW_INPUT#INPUT": ({ action: { payload }, updateState }) => {
