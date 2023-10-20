@@ -43,6 +43,7 @@ createCustomElement("x-759224-menu-builder-uic", {
 	 * 	type: external or internal link
 	 * 	page: what page to link to if internal type link
 	 * 	sys_id: what sys_id to link to on a page if internal type link
+	 *  rightIcon: right icon property to show icon
 	 * 	href: the href link for an external type link
 	 * }
 	 * If you look at how the default value is setup and compare it to the actual menu in a UI Builder portal page then hopefully the structure starts to make sense
@@ -86,6 +87,7 @@ createCustomElement("x-759224-menu-builder-uic", {
 								label: "Browse Menu Item 1",
 								type: "route",
 								page: "article",
+								rightIcon:"document-fill",
 								sys_id: "3020c9b1474321009db4b5b08b9a712d",
 								href: null,
 							},
