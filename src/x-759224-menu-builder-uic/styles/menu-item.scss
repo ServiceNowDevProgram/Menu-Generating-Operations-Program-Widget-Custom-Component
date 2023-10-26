@@ -1,3 +1,5 @@
+$textGray: #7d7d7d;
+
 .menu-item {
     align-items: center;
     display: flex;
@@ -12,24 +14,32 @@
     .midMenu {
         display: flex;
         width: 100%;
-        max-width: 300px;
         align-items: center;
         gap: 10px;
 
         now-input {
             width: 100%;
+            max-width: 250px;
         }
 
         now-dropdown {
             max-width: 105px;
+        }
+
+        .link-label {
+            color: $textGray;
+            margin: 0;
+            width: 100%;
+            font-size: 1rem;
         }
     }
 
     .rightMenu {
         display: flex;
         margin-left: auto;
-        flex-direction: row-reverse;
         margin-right: 30px;
+        max-width: 100px;
+        flex-direction: row-reverse;
         align-items: center;
 
         now-collapse {
@@ -73,19 +83,5 @@ span {
 
     &[data-choice="action"] {
         background-color: #28a745;
-    }
-}
-
-.now-dropdown {
-    &.is-disabled {
-        opacity: 1;
-
-        .now-button-icon {
-            color: #7d7d7d;
-        }
-    
-        .now-dropdown-label {
-            color: #7d7d7d;
-        }
     }
 }

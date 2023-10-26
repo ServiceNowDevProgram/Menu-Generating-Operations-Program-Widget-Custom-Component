@@ -57,6 +57,11 @@ const view = (
 		},
 	};
 
+	const linkOptions = [
+		{ id: "external", label: "External Link" },
+		{ id: "route", label: "Internal Link" },
+	];
+
 	// adding rightIcon property to JSON
 	if(iconValue){
 		actionJSON.value.rightIcon = iconValue
@@ -122,26 +127,30 @@ const view = (
 					disabled={!editMode}
 					search="true"
 				></now-dropdown>
-				<now-dropdown
-					items={[
-						{ id: "external", label: "External Link" },
-						{ id: "route", label: "Internal Link" },
-					]}
-					selectedItems={[typeValue]}
-					name="typeInput"
-					select="single"
-					placeholder=""
-					icon=""
-					variant="secondary"
-					size="md"
-					bare={true}
-					tooltip-content="Select internal or external link"
-					panel-fit-props={{}}
-					show-padding={true}
-					config-aria={{}}
-					disabled={!editMode}
-					search="none"
-				></now-dropdown>
+				{
+					editMode ?
+					<now-dropdown
+						items={linkOptions}
+						selectedItems={[typeValue]}
+						name="typeInput"
+						select="single"
+						placeholder=""
+						icon=""
+						variant="secondary"
+						size="md"
+						bare={true}
+						tooltip-content="Select internal or external link"
+						panel-fit-props={{}}
+						show-padding={true}
+						config-aria={{}}
+						disabled={!editMode}
+						search="none"
+					></now-dropdown>
+					:
+					<p className="link-label">
+						{typeValue ? linkOptions.find(opt => opt.id === typeValue).label : ""}
+					</p>
+				}
 			</div>
 			<div className="rightMenu">
 				<menu-editor parent={id} expandParent={expandParent}></menu-editor>
