@@ -1,17 +1,18 @@
 .menu-item {
     align-items: center;
     display: flex;
+    gap: 1rem;
 
     .leftMenu {
         display: flex;
         gap: 10px;
-        margin-right: 10px;
         align-items: center;
     }
 
     .midMenu {
         display: flex;
-        width: 33%;
+        width: 100%;
+        max-width: 300px;
         align-items: center;
         gap: 10px;
 
@@ -59,7 +60,7 @@ li {
 span {
     text-transform: capitalize;
     color: white;
-    padding: 8px;
+    padding: 0.25rem 0.75rem;
     border-radius: 32px;
 
     &[data-choice="menu"] {
@@ -68,5 +69,19 @@ span {
 
     &[data-choice="action"] {
         background-color: #28a745;
+    }
+}
+
+.now-dropdown {
+    &.is-disabled {
+        opacity: 1;
+
+        .now-button-icon {
+            color: #7d7d7d;
+        }
+    
+        .now-dropdown-label {
+            color: #7d7d7d;
+        }
     }
 }

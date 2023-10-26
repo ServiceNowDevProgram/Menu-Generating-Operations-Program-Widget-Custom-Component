@@ -88,26 +88,29 @@ const view = (
 					name="labelInput"
 					readonly={!editMode}
 				></now-input>
-				<now-dropdown
-					items={[
-						{ id: "external", label: "External Link" },
-						{ id: "route", label: "Internal Link" },
-					]}
-					selectedItems={[typeValue]}
-					name="typeInput"
-					select="single"
-					placeholder=""
-					icon=""
-					variant="secondary"
-					size="md"
-					bare={true}
-					tooltip-content="Select internal or external link"
-					panel-fit-props={{}}
-					show-padding={true}
-					config-aria={{}}
-					disabled={!editMode}
-					search="none"
-				></now-dropdown>
+				{editMode ? 
+					<now-dropdown
+						items={[
+							{ id: "external", label: "External Link" },
+							{ id: "route", label: "Internal Link" },
+						]}
+						selectedItems={[typeValue]}
+						name="typeInput"
+						select="single"
+						placeholder=""
+						icon=""
+						variant="secondary"
+						size="md"
+						bare={true}
+						tooltip-content="Select internal or external link"
+						panel-fit-props={{}}
+						show-padding={true}
+						config-aria={{}}
+						disabled={!editMode}
+						search="none"
+					></now-dropdown>
+					: <p>{typeValue}</p>
+				}
 			</div>
 			<div className="rightMenu">
 				<menu-editor parent={id} expandParent={expandParent}></menu-editor>
