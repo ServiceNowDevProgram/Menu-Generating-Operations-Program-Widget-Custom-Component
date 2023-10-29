@@ -13,6 +13,22 @@ const view = () => {
 		  * append-to-meta is used to differentiate which now-button was clicked as they all use the same action 
 		  */}
         <now-button
+          label=""
+          variant="primary"
+          size="md"
+          icon="undo-top-fill"
+          tooltip-content="Undo"
+          append-to-meta={{ elementId: "undo" }}
+        ></now-button>
+        <now-button
+          label=""
+          variant="primary"
+          size="md"
+          icon="redo-top-fill"
+          tooltip-content="Redo"
+          append-to-meta={{ elementId: "redo" }}
+        ></now-button>
+        <now-button
           label="Action"
           variant="primary"
           size="md"

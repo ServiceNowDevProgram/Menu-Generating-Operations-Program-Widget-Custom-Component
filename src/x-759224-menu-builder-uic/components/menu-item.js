@@ -6,18 +6,20 @@ import "@servicenow/now-collapse";
 import "@servicenow/now-dropdown";
 import "@servicenow/now-input";
 import "./menu-editor";
+import iconlist from "../icons";
 
 // File description: This is where to configure all the details about a menu item, such as its name, link, or delete
 
 const view = (
 	{
-		properties: { id, choice, label, type, page, sysId, href, expandParent },
+		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon },
 		labelInput,
 		typeInput,
 		pageInput,
 		sysIdInput,
 		hrefInput,
 		editMode,
+		iconInput
 	},
 	{ dispatch }
 ) => {
@@ -31,6 +33,7 @@ const view = (
 	const pageValue = pageInput || page;
 	const sysIdValue = sysIdInput || sysId;
 	const hrefValue = hrefInput || href;
+	const iconValue = iconInput || rightIcon;
 
 	// This is constructing the JSON output that the chrome_menu UX Page Property expects for this specific menu item
 
@@ -53,6 +56,11 @@ const view = (
 			},
 		},
 	};
+
+	// adding rightIcon property to JSON
+	if(iconValue){
+		actionJSON.value.rightIcon = iconValue
+	}
 
 	if (typeValue) {
 		actionJSON.value.type = typeValue;
@@ -88,29 +96,52 @@ const view = (
 					name="labelInput"
 					readonly={!editMode}
 				></now-input>
-				{editMode ? 
-					<now-dropdown
-						items={[
-							{ id: "external", label: "External Link" },
-							{ id: "route", label: "Internal Link" },
-						]}
-						selectedItems={[typeValue]}
-						name="typeInput"
-						select="single"
-						placeholder=""
-						icon=""
-						variant="secondary"
-						size="md"
-						bare={true}
-						tooltip-content="Select internal or external link"
-						panel-fit-props={{}}
-						show-padding={true}
-						config-aria={{}}
-						disabled={!editMode}
-						search="none"
-					></now-dropdown>
-					: <p>{typeValue}</p>
+				{
+					iconValue && <now-button
+					variant="primary"
+					size="md"
+					icon={iconValue}
+				  ></now-button>
 				}
+				<now-dropdown
+					// mapping iconlist for required data in now-dropdown
+					// adding no-icon as a no selection
+					items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e }))]}
+					selectedItems={[iconValue]}
+					name="iconInput"
+					select="single"
+					placeholder=""
+					icon=""
+					variant="secondary"
+					size="md"
+					bare={true}
+					tooltip-content="Select right icon"
+					panel-fit-props={{}}
+					show-padding={true}
+					config-aria={{}}
+					disabled={!editMode}
+					search="true"
+				></now-dropdown>
+				<now-dropdown
+					items={[
+						{ id: "external", label: "External Link" },
+						{ id: "route", label: "Internal Link" },
+					]}
+					selectedItems={[typeValue]}
+					name="typeInput"
+					select="single"
+					placeholder=""
+					icon=""
+					variant="secondary"
+					size="md"
+					bare={true}
+					tooltip-content="Select internal or external link"
+					panel-fit-props={{}}
+					show-padding={true}
+					config-aria={{}}
+					disabled={!editMode}
+					search="none"
+				></now-dropdown>
 			</div>
 			<div className="rightMenu">
 				<menu-editor parent={id} expandParent={expandParent}></menu-editor>
@@ -206,6 +237,9 @@ createCustomElement("menu-item", {
 		},
 		expandParent: {
 			default: undefined
+		},
+		rightIcon: {
+			default: null
 		}
 	},
 	// Keeps track of any changes made during editing
@@ -215,6 +249,7 @@ createCustomElement("menu-item", {
 		pageInput: undefined,
 		sysIdInput: undefined,
 		hrefInput: undefined,
+		iconInput: undefined,
 		editMode: false,
 	},
 	actionHandlers: {
@@ -232,6 +267,7 @@ createCustomElement("menu-item", {
 					updateState({ typeInput: payload.item.id });
 					break;
 				default:
+					updateState({ iconInput: payload.item.id }); // action on icon selection
 			}
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)

@@ -9,7 +9,7 @@ import "./menu-item";
 
 
 const view = ({ properties: { tree }, expanded }, { updateState }) => {
-	const { id, children, parent, choice, label, type, page, sys_id, href } =
+	const { id, children, parent, choice, label, type, page, sys_id, href, rightIcon } =
 		tree;
 
 	const hasChildren = children && children.length > 0;
@@ -40,6 +40,7 @@ const view = ({ properties: { tree }, expanded }, { updateState }) => {
 					page={page}
 					sysId={sys_id}
 					href={href}
+					rightIcon={rightIcon}
 					className="menu-item"
 					expandParent={EXPAND_PARENT}
 				></menu-item>
