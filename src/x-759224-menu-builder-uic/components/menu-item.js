@@ -12,7 +12,7 @@ import iconlist from "../icons";
 
 const view = (
 	{
-		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon },
+		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon, level },
 		labelInput,
 		typeInput,
 		pageInput,
@@ -34,7 +34,7 @@ const view = (
 	const sysIdValue = sysIdInput || sysId;
 	const hrefValue = hrefInput || href;
 	const iconValue = iconInput || rightIcon;
-
+	
 	// This is constructing the JSON output that the chrome_menu UX Page Property expects for this specific menu item
 
 	const routeJSON = {
@@ -135,9 +135,12 @@ const view = (
 						</p>
 					}
 				</div>
-				<div className="rightMenu">
-					<menu-editor parent={id} expandParent={expandParent}></menu-editor>
-				</div>
+				{
+					level < 4 ? <div className="rightMenu">
+						<menu-editor parent={id} expandParent={expandParent}></menu-editor>
+					</div> : <div></div>
+				}
+				
 			</div>
 			<now-collapse expanded={editMode}>
 				<div className="menu-row">
@@ -251,6 +254,9 @@ createCustomElement("menu-item", {
 		},
 		rightIcon: {
 			default: null
+		},
+		level: {
+			default: 0
 		}
 	},
 	// Keeps track of any changes made during editing

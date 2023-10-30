@@ -8,7 +8,7 @@ import "./menu-item";
 // File description: This displays a top-level menu item (and child items), expand/collapse functionality for the container
 
 
-const view = ({ properties: { tree }, expanded }, { updateState }) => {
+const view = ({ properties: { tree, level }, expanded }, { updateState }) => {
 	const { id, children, parent, choice, label, type, page, sys_id, href, rightIcon } =
 		tree;
 
@@ -43,6 +43,7 @@ const view = ({ properties: { tree }, expanded }, { updateState }) => {
 					rightIcon={rightIcon}
 					className="menu-item"
 					expandParent={EXPAND_PARENT}
+					level={level}
 				></menu-item>
 			</div>
 			{/* Render child menu items in a collapsible container if they exist */}
@@ -50,7 +51,7 @@ const view = ({ properties: { tree }, expanded }, { updateState }) => {
 				<ul>
 					<now-collapse expanded={expanded}>
 						{children.map((child) => {
-							return <menu-tree key={child.id} tree={child}></menu-tree>;
+							return <menu-tree key={child.id} tree={child} level={level + 1}></menu-tree>;
 						})}
 					</now-collapse>
 				</ul>
@@ -68,6 +69,9 @@ createCustomElement("menu-tree", {
 		tree: {
 			default: {},
 		},
+		level: {
+			default: 1
+		}
 	},
 	initialState: {
 		expanded: true,
