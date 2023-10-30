@@ -34,7 +34,8 @@ const view = (
 	const sysIdValue = sysIdInput || sysId;
 	const hrefValue = hrefInput || href;
 	const iconValue = iconInput || rightIcon;
-	
+	console.log("TEST_CASE", iconValue);
+
 	// This is constructing the JSON output that the chrome_menu UX Page Property expects for this specific menu item
 
 	const routeJSON = {
@@ -112,7 +113,7 @@ const view = (
 					<now-dropdown
 						// mapping iconlist for required data in now-dropdown
 						// adding no-icon as a no selection
-						items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e }))]}
+						items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e, type: 'icon' }))]}
 						selectedItems={[iconValue]}
 						name="iconInput"
 						select="single"
@@ -278,13 +279,17 @@ createCustomElement("menu-item", {
 			 * Only handle this event if called from this component
 			 * Since menu-editor also uses this event
 			 */
+
 			switch (payload.item.id) {
 				case "route":
 				case "external":
 					updateState({ typeInput: payload.item.id });
 					break;
 				default:
-					updateState({ iconInput: payload.item.id }); // action on icon selection
+			}
+
+			if(payload.item.type === 'icon'){
+				updateState({ iconInput: payload.item.id }); // action on icon selection
 			}
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)
