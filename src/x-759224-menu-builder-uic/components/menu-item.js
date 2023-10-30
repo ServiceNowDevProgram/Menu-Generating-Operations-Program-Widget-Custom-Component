@@ -112,7 +112,7 @@ const view = (
 					<now-dropdown
 						// mapping iconlist for required data in now-dropdown
 						// adding no-icon as a no selection
-						items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e, type: 'icon' }))]}
+						items={[{ id: null, label: "no-icon", type: 'icon' }, ...iconlist.map(e => ({ id: e, label: e, type: 'icon' }))]}
 						selectedItems={[iconValue]}
 						name="iconInput"
 						select="single"
