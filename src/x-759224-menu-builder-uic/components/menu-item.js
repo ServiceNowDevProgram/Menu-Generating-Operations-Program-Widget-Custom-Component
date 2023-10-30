@@ -34,7 +34,6 @@ const view = (
 	const sysIdValue = sysIdInput || sysId;
 	const hrefValue = hrefInput || href;
 	const iconValue = iconInput || rightIcon;
-	console.log("TEST_CASE", iconValue);
 
 	// This is constructing the JSON output that the chrome_menu UX Page Property expects for this specific menu item
 
