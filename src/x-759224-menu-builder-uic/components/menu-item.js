@@ -12,7 +12,7 @@ import iconlist from "../icons";
 
 const view = (
 	{
-		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon },
+		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon, level },
 		labelInput,
 		typeInput,
 		pageInput,
@@ -57,6 +57,11 @@ const view = (
 		},
 	};
 
+	const linkOptions = [
+		{ id: "external", label: "External Link" },
+		{ id: "route", label: "Internal Link" },
+	];
+
 	// adding rightIcon property to JSON
 	if(iconValue){
 		actionJSON.value.rightIcon = iconValue
@@ -75,131 +80,140 @@ const view = (
 
 	return (
 		<li className="menu-item">
-			<div className="leftMenu">
-				<now-button-iconic
-					icon={editMode ? "gear-fill" : "gear-outline"}
-					bare={true}
-					append-to-meta={{ action: "edit" }}
-				></now-button-iconic>
-				<span data-choice={choice}>{choice}</span>
-			</div>
-			<div className="midMenu">
-				<now-input
-					size="md"
-					helper-content=""
-					label="Label"
-					messages={[]}
-					placeholder=""
-					step="any"
-					type="text"
-					value={labelValue}
-					name="labelInput"
-					readonly={!editMode}
-				></now-input>
+			<div className="menu-row">
+				<div className="leftMenu">
+					<now-button-iconic
+						icon={editMode ? "gear-fill" : "gear-outline"}
+						bare={true}
+						append-to-meta={{ action: "edit" }}
+					></now-button-iconic>
+					<span data-choice={choice}>{choice}</span>
+				</div>
+				<div className="midMenu">
+					<now-input
+						size="md"
+						helper-content=""
+						label="Label"
+						messages={[]}
+						placeholder=""
+						step="any"
+						type="text"
+						value={labelValue}
+						name="labelInput"
+						readonly={!editMode}
+					></now-input>
+					{
+						iconValue && <now-button
+						variant="primary"
+						size="md"
+						icon={iconValue}
+						></now-button>
+					}
+					<now-dropdown
+						// mapping iconlist for required data in now-dropdown
+						// adding no-icon as a no selection
+						items={[{ id: null, label: "no-icon", type: 'icon' }, ...iconlist.map(e => ({ id: e, label: e, type: 'icon' }))]}
+						selectedItems={[iconValue]}
+						name="iconInput"
+						select="single"
+						placeholder=""
+						icon=""
+						variant="secondary"
+						size="md"
+						bare={true}
+						tooltip-content="Select right icon"
+						panel-fit-props={{}}
+						show-padding={true}
+						config-aria={{}}
+						disabled={!editMode}
+						search="true"
+					></now-dropdown>
+					{
+						!editMode &&
+						<p className="link-label">
+							{typeValue ? linkOptions.find(opt => opt.id === typeValue).label : ""}
+						</p>
+					}
+				</div>
 				{
-					iconValue && <now-button
-					variant="primary"
-					size="md"
-					icon={iconValue}
-				  ></now-button>
+					level < 4 ? <div className="rightMenu">
+						<menu-editor parent={id} expandParent={expandParent}></menu-editor>
+					</div> : <div></div>
 				}
-				<now-dropdown
-					// mapping iconlist for required data in now-dropdown
-					// adding no-icon as a no selection
-					items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e }))]}
-					selectedItems={[iconValue]}
-					name="iconInput"
-					select="single"
-					placeholder=""
-					icon=""
-					variant="secondary"
-					size="md"
-					bare={true}
-					tooltip-content="Select right icon"
-					panel-fit-props={{}}
-					show-padding={true}
-					config-aria={{}}
-					disabled={!editMode}
-					search="true"
-				></now-dropdown>
-				<now-dropdown
-					items={[
-						{ id: "external", label: "External Link" },
-						{ id: "route", label: "Internal Link" },
-					]}
-					selectedItems={[typeValue]}
-					name="typeInput"
-					select="single"
-					placeholder=""
-					icon=""
-					variant="secondary"
-					size="md"
-					bare={true}
-					tooltip-content="Select internal or external link"
-					panel-fit-props={{}}
-					show-padding={true}
-					config-aria={{}}
-					disabled={!editMode}
-					search="none"
-				></now-dropdown>
+				
 			</div>
-			<div className="rightMenu">
-				<menu-editor parent={id} expandParent={expandParent}></menu-editor>
-				<now-collapse expanded={editMode}>
-					<div>
-						{typeValue == "route" ? (
-							<Fragment>
-								<now-input
-									size="md"
-									helper-content=""
-									label="Page"
-									messages={[]}
-									placeholder=""
-									step="any"
-									type="text"
-									value={pageValue}
-									name="pageInput"
-									readonly={!editMode}
-								></now-input>
-								<now-input
-									size="md"
-									helper-content=""
-									label="sys_id"
-									messages={[]}
-									placeholder=""
-									step="any"
-									type="text"
-									value={sysIdValue}
-									name="sysIdInput"
-									readonly={!editMode}
-								></now-input>
-							</Fragment>
-						) : null}
-						{typeValue == "external" ? (
+			<now-collapse expanded={editMode}>
+				<div className="menu-row">
+					<now-button-iconic
+						icon="trash-fill"
+						bare={true}
+						className="trashFilled shiftDown"
+						size="md"
+						variant="inherit"
+						append-to-meta={{ action: "delete", id }}
+					></now-button-iconic>
+					<now-dropdown
+						items={linkOptions}
+						selectedItems={[typeValue]}
+						name="typeInput"
+						className="shiftDown"
+						select="single"
+						placeholder="Select Link Type"
+						icon=""
+						variant="secondary"
+						size="md"
+						bare={true}
+						tooltip-content="Select internal or external link"
+						panel-fit-props={{}}
+						show-padding={true}
+						config-aria={{}}
+						disabled={!editMode}
+						search="none"
+					></now-dropdown>
+					{typeValue == "route" ? (
+						<Fragment>
 							<now-input
 								size="md"
 								helper-content=""
-								label="HREF"
+								label="Page"
 								messages={[]}
 								placeholder=""
 								step="any"
 								type="text"
-								value={hrefValue}
-								name="hrefInput"
+								value={pageValue}
+								name="pageInput"
 								readonly={!editMode}
 							></now-input>
-						) : null}
-						<now-button-iconic
-							icon="trash-fill"
-							bare={true}
-							className="trashFilled"
+							<now-input
+								size="md"
+								helper-content=""
+								label="sys_id"
+								messages={[]}
+								placeholder=""
+								step="any"
+								type="text"
+								value={sysIdValue}
+								name="sysIdInput"
+								readonly={!editMode}
+							></now-input>
+						</Fragment>
+					) : null}
+					{typeValue == "external" ? (
+						<now-input
 							size="md"
-							variant="inherit"
-							append-to-meta={{ action: "delete", id }}
-						></now-button-iconic>
-					</div>
-				</now-collapse>
-			</div>
+							helper-content=""
+							label="HREF"
+							messages={[]}
+							placeholder=""
+							step="any"
+							type="text"
+							value={hrefValue}
+							name="hrefInput"
+							readonly={!editMode}
+						></now-input>
+					) : null}
+				</div>
+			</now-collapse>
 		</li>
 	);
 };
@@ -240,6 +254,9 @@ createCustomElement("menu-item", {
 		},
 		rightIcon: {
 			default: null
+		},
+		level: {
+			default: 0
 		}
 	},
 	// Keeps track of any changes made during editing
@@ -261,13 +278,17 @@ createCustomElement("menu-item", {
 			 * Only handle this event if called from this component
 			 * Since menu-editor also uses this event
 			 */
+
 			switch (payload.item.id) {
 				case "route":
 				case "external":
 					updateState({ typeInput: payload.item.id });
 					break;
 				default:
-					updateState({ iconInput: payload.item.id }); // action on icon selection
+			}
+
+			if(payload.item.type === 'icon'){
+				updateState({ iconInput: payload.item.id }); // action on icon selection
 			}
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)
