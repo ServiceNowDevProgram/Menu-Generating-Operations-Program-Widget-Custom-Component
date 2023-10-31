@@ -12,7 +12,7 @@ import iconlist from "../icons";
 
 const view = (
 	{
-		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon },
+		properties: { id, choice, label, type, page, sysId, href, expandParent, rightIcon, level },
 		labelInput,
 		typeInput,
 		pageInput,
@@ -112,7 +112,7 @@ const view = (
 					<now-dropdown
 						// mapping iconlist for required data in now-dropdown
 						// adding no-icon as a no selection
-						items={[{ id: null, label: "no-icon" }, ...iconlist.map(e => ({ id: e, label: e }))]}
+						items={[{ id: null, label: "no-icon", type: 'icon' }, ...iconlist.map(e => ({ id: e, label: e, type: 'icon' }))]}
 						selectedItems={[iconValue]}
 						name="iconInput"
 						select="single"
@@ -135,9 +135,12 @@ const view = (
 						</p>
 					}
 				</div>
-				<div className="rightMenu">
-					<menu-editor parent={id} expandParent={expandParent}></menu-editor>
-				</div>
+				{
+					level < 4 ? <div className="rightMenu">
+						<menu-editor parent={id} expandParent={expandParent}></menu-editor>
+					</div> : <div></div>
+				}
+				
 			</div>
 			<now-collapse expanded={editMode}>
 				<div className="menu-row">
@@ -251,6 +254,9 @@ createCustomElement("menu-item", {
 		},
 		rightIcon: {
 			default: null
+		},
+		level: {
+			default: 0
 		}
 	},
 	// Keeps track of any changes made during editing
@@ -272,13 +278,17 @@ createCustomElement("menu-item", {
 			 * Only handle this event if called from this component
 			 * Since menu-editor also uses this event
 			 */
+
 			switch (payload.item.id) {
 				case "route":
 				case "external":
 					updateState({ typeInput: payload.item.id });
 					break;
 				default:
-					updateState({ iconInput: payload.item.id }); // action on icon selection
+			}
+
+			if(payload.item.type === 'icon'){
+				updateState({ iconInput: payload.item.id }); // action on icon selection
 			}
 		},
 		// Text input field has changed (someone typed in the field or cleared value for example)
